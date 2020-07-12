@@ -20,3 +20,17 @@
   font-style: italic;
 }
 
+.buttonsGame{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,160px);
+  justify-content: center;
+  padding-top: 100px;
+}
+
+.buttonGame{
+  cursor: pointer;
+}
+
+.buttonGame:hover{
+  width: 90%;
+}

@@ -1,0 +1,22 @@
+.buttons{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 250px);
+  padding-top: 100px;
+  justify-content: center;
+}
+
+.buttonContainer{
+  display: grid;
+  grid-template-columns: repeat(auto-fit,200px);
+  padding-right: 10px;
+}
+
+.titleMain{
+  font-family: fantasy;
+  text-align: center;
+  padding-right: 100px;
+  padding-top: 20px;
+  color: black;
+  font-style: italic;
+}
+

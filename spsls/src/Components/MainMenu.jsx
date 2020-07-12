@@ -6,7 +6,7 @@ import ModalMoreInfo from './ModalInfo';
 
 export default function MainMenu(){
     const history = useHistory();
-    const [showModal, setShowModal] = useState(false)
+    const [showModal, setShowModal] = useState(false);
 
     const openOneVsCom = () => history.push('/onevscom');
     const openOneVsOne = () => history.push('/onevsone');
@@ -17,7 +17,8 @@ export default function MainMenu(){
         <>
         <div className= "container">
             <h1 className= "titleMain">
-                Welcome!
+                Welcome to 
+                STONE, PAPER, SCISSOR, LIZARD AND SPOCK!
             </h1>
             <div className= "buttons">
                 <div className="buttonContainer"><button type= "button" className="btn btn-success" onClick = {() => openOneVsCom()}>Play vs COM</button></div>
@@ -25,7 +26,6 @@ export default function MainMenu(){
                 <div className="buttonContainer"><button type= "button" className="btn btn-danger" onClick = {() => openModal()}>More Info...</button></div>
             </div>
         </div>
-        {console.log(showModal)}
         {showModal && <ModalMoreInfo closeModal= {closeModal}/>}
         </>
     )

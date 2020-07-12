@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import Game from '../Game'
 import ButtonsGroup from './ButtonsGroup';
+import Navigation from './NavBar'
 
 
 export default function OneVsPC(){
@@ -28,8 +29,11 @@ export default function OneVsPC(){
 
     return(
         <div> 
-           <h3>{pointsP1}  {pointsP2}</h3>
-            <h3>{text} </h3>
+            <Navigation/>
+           <div className= "points">
+              <h1 className= "pointViewer">PLAYER ONE {pointsP1} | {pointsP2} IA</h1>
+           </div>
+            {/* <h3>{text} </h3> */}
             <ButtonsGroup property= {playerElection}/> 
         </div>
     )

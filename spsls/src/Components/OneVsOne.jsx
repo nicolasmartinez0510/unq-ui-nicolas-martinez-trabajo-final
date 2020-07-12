@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import Game from '../Game'
 import ButtonsGroup from './ButtonsGroup';
+import Navigation from './NavBar'
 
 export default function OneVsOne(){
     const [ playerTurn, setPlayerTurn ] = useState(true);
@@ -32,6 +33,7 @@ export default function OneVsOne(){
 
     return(
         <div>
+        <Navigation/>
             <h3>{pointsP1}  {pointsP2}</h3>
         { playerTurn &&
         <div className= "playerOne">

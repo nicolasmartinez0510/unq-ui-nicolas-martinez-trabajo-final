@@ -4,6 +4,7 @@ import {Modal, Button} from 'react-bootstrap';
 
 export default function ModalMoreInfo({closeModal}) {
     return(
+        <>
         <div className= "modalContainer">
         <Modal.Dialog>
             <Modal.Header closeButton onClick = {closeModal}>
@@ -14,7 +15,7 @@ export default function ModalMoreInfo({closeModal}) {
                     <img className = "imgInfo" src = {require('../game_info.png')}/>
                 </a>
 
-                <p>If yoy do not understand &nbsp; 
+                <p>If you don't understand please &nbsp; 
                     <a href= "https://bigbangtheory.fandom.com/wiki/Rock,_Paper,_Scissors,_Lizard,_Spock" target="_blank">
                         click here!
                     </a>
@@ -25,6 +26,7 @@ export default function ModalMoreInfo({closeModal}) {
             </Modal.Footer>
         </Modal.Dialog>
         </div>
+        </>
     )
 
 

@@ -34,3 +34,12 @@
 .buttonGame:hover{
   width: 90%;
 }
+
+.modalConatiner{
+    background-color: #fff;
+    width: 40%;
+  }
+  
+.imgInfo{
+  padding-left: 60px;
+}

@@ -11,7 +11,6 @@ export default function OneVsOne(){
 
     const [pointsP1, setPointsP1] = useState(0);
     const [pointsP2, setPointsP2] = useState(0);
-
    
    const playerOneChoice = (election) => {
             setElectionP1(election);

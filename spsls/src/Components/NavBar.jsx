@@ -15,13 +15,18 @@ export default function Navigation() {
     const openModal = () => setShowModal(true);
     const closeModal = () => setShowModal(false);
 
+    const refreshPage = () => {
+      window.location.reload(false);
+    }
+
     return (
       <>
         <nav className="navbar navbar-dark bg-secondary row p-10 justify-content-between rounded">
-            <h1 className = "logo col-1" >PLAY</h1>
+            <h1 className = "logo col-1" ></h1>
             <span className="col-8"/>
-            <button className="btn btn-danger my-2 my-sm-0 col-1" type="submit" onClick = {openModal}>More Info</button>
-            <button className="btn btn-outline-light col-1 mr-2" type="submit" onClick = {goToHome}>Go to home</button>
+            <button className="btn btn-success mr-3" onClick= {() => refreshPage()}>New Game</button>
+            <button className="btn btn-danger mr-2" type="submit" onClick = {openModal}>More Info</button>
+            <button className="btn btn-outline-light mr-1" type="submit" onClick = {goToHome}>Go to home</button>
         </nav>
         {showModal && <ModalMoreInfo closeModal= {closeModal}/>}
         </>

@@ -10,9 +10,9 @@ import Rules from './Rules'
 
     const clearResult = () => Rules.clearResult();
 
-    const playGame = (form1, form2) => {
+    const playGame = (form1,form2) => {
         if(!Boolean(form2)){
-            return (Rules.checkRule(form1, randomForm()));
+            return(Rules.checkRule(form1, randomForm()));
         } else { return Rules.checkRule(form1,form2) }  
     }
 

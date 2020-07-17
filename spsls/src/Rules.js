@@ -1,107 +1,116 @@
 let pointsP1 = 0;
 let pointsP2 = 0;
+let formP1 = "";
+let formP2 = "";
+
 
 const updatePoints = (path) => {
-    if(path === 'P1'){
+    if(path === "P1"){
         pointsP1 = (pointsP1 +1)
     } else {
         pointsP2 = (pointsP2 + 1);
     }
 }
 
-const result = (playerWinner) => { return {pointsP1: pointsP1, pointsP2: pointsP2, playerWinner: playerWinner} };
+const result = (playerWinner) => { 
+    return {pointsP1: pointsP1, pointsP2: pointsP2, playerWinner: playerWinner, formP1: formP1, formP2: formP2} 
+};
 
 const clearResult= () => {
     pointsP1 = 0;
     pointsP2 = 0;
 }    
-const checkStoneRule = ( form ) => {   
+const checkStoneRule = () => {   
     
-    switch(form) {
-        case 'LIZARD':
-            updatePoints('P1');
-            return result('P1');
-        case 'SCISSOR':
-            updatePoints('P1');
-            return result('P1');
+    switch(formP2) {
+        case "LIZARD":
+            updatePoints("P1");
+            return result("P1");
+        case "SCISSOR":
+            updatePoints("P1");
+            return result("P1");
         default:
-            updatePoints('P2');
-            return result('P2');  
+            updatePoints("P2");
+            return result("P2");  
     }
 };
 
-const checkPaperRule = (form) => {
-    switch(form) {
-        case 'STONE':
-            updatePoints('P1');
-            return result('P1');
-        case 'SPOCK':
-            updatePoints('P1');
-            return result('P1');
+const checkPaperRule = () => {
+    switch(formP2) {
+        case "STONE":
+            updatePoints("P1");
+            return result("P1");
+        case "SPOCK":
+            updatePoints("P1");
+            return result("P1");
         default:
-            updatePoints('P2');
-            return result('P2');  
+            updatePoints("P2");
+            return result("P2");  
     }
 };
 
-const checkScissorRule = (form) => {
-    switch(form) {
-        case 'PAPER':
-            updatePoints('P1');
-            return result('P1');
-        case 'LIZARD':
-            updatePoints('P1');
-            return result('P1');
+const checkScissorRule = () => {
+    switch(formP2) {
+        case "PAPER":
+            updatePoints("P1");
+            return result("P1");
+        case "LIZARD":
+            updatePoints("P1");
+            return result("P1");
         default:
-            updatePoints('P2');
-            return result('P2');  
+            updatePoints("P2");
+            return result("P2");  
     }
 };
 
-const checkLizardRule = (form) => {
-    switch(form) {
-        case 'SPOCK':
-            updatePoints('P1');
-            return result('P1');
-        case 'PAPER':
-            updatePoints('P1');
-            return result('P1');
+const checkLizardRule = () => {
+    switch(formP2) {
+        case "SPOCK":
+            updatePoints("P1");
+            return result("P1");
+        case "PAPER":
+            updatePoints("P1");
+            return result("P1");
         default:
-            updatePoints('P2');
-            return result('P2');  
+            updatePoints("P2");
+            return result("P2");  
     }
 
 };
 
-const checkSpockRule = (form) => {
-    switch(form) {
-        case 'SCISSOR':
-            updatePoints('P1');
-            return result('P1');
-        case 'STONE':
-            updatePoints('P1');
-            return result('P1');
+const checkSpockRule = () => {
+    switch(formP2) {
+        case "SCISSOR":
+            updatePoints("P1");
+            return result("P1");
+        case "STONE":
+            updatePoints("P1");
+            return result("P1");
         default:
-            updatePoints('P2');
-            return result('P2');  
+            updatePoints("P2");
+            return result("P2");  
     }    
 };
 
 const checkRule = (form1, form2) => { 
+    formP1 = form1
+    formP2 = form2
     if(form1 === form2){
-        return {pointsP1:pointsP1, pointsP2: pointsP2, playerWinner: 'Anyone'}
+        return result("TIE")
     } else {
         switch (form1) {
             case "STONE":
-                return checkStoneRule(form2);
+                return checkStoneRule();
             case "SCISSOR":
-                return checkScissorRule(form2);
+                return checkScissorRule();
             case "PAPER":
-                return checkPaperRule(form2);
+                return checkPaperRule();
             case "LIZARD":
-                return checkLizardRule(form2);
+                return checkLizardRule();
             case "SPOCK":
-                return checkSpockRule(form2);
+                return checkSpockRule();
+            default:
+                return result("TIE")
         }
       }
     }

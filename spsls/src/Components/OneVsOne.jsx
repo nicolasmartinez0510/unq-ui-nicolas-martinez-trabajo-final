@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Game from '../Game'
 import ButtonsGroup from './ButtonsGroup';
 import Navigation from './NavBar'

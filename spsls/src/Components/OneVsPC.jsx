@@ -24,6 +24,7 @@ export default function OneVsPC(){
     const [playerChoice, setPlayerChoice] = useState("");
     const [iaChoice, setIAChoice] = useState("");
     const [showData, setShowData] = useState(false);
+    const [colorResult, setColorResult] = useState("");
     
     const playerElection = (election) => {
         const { pointsP1, pointsP2, playerWinner, formP1, formP2 } = Game.playGame(election);
@@ -34,27 +35,35 @@ export default function OneVsPC(){
         setPointsP2(pointsP2);
 
         if(playerWinner === 'TIE'){
-            setText('TIE, IA CHOICE ' + formP2 + ' SAME')
-        } else if(playerWinner === 'P1') { 
-            setText('PLAYER ONE WINS WITH ' + formP1 ) 
-        } else { setText('IA WIN WITH ' + formP2)}
+            setColorResult("warning")
+            setText('TIE, Sheldon CHOICE ' + formP2 + ' SAME')
+        } else if(playerWinner === 'P1') {
+            setColorResult("success") 
+            setText('Player One WINS with ' + formP1 ) 
+        } else {
+            setColorResult("danger") 
+            setText('Sheldon WIN with ' + formP2)
+         }
         
         setShowData(true);
+
+        // setTimeout( () => setShowData(false), 3000);
+
     }
 
 
     return(
-        <div> 
+        <div className = "container"> 
             <Navigation/>
            <div className= "points">
-                <h1 className= "pointViewer">PLAYER ONE {pointsP1} | {pointsP2} IA</h1>
+                <h1 className= "pointViewer">PLAYER ONE {pointsP1} | {pointsP2} SHELDON</h1>
            </div>
                 <>
-                {showData && <h2 className="text-success">{text}</h2>}
-                {showData && <h5>You choice {playerChoice} | IA choice {iaChoice}</h5> } 
-                {showData && <button onClick = {( () => setShowData(false))}>Next Game</button>}
+                {showData && <h2 className= {"alert alert-" + colorResult +" m-2"}>{text}</h2>}
+                {showData && <h5 className="text-muted">You choice {playerChoice} | Sheldon choice {iaChoice}</h5> } 
+                {showData && <button className= "btn btn-warning m-4" onClick = {( () => setShowData(false))}>Next Game</button>}
                 </>         
-            <ButtonsGroup property= {playerElection}/> 
+                {!showData && <ButtonsGroup property= {playerElection}/> }
         </div>
     )
 }

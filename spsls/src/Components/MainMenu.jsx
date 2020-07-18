@@ -21,7 +21,7 @@ export default function MainMenu(){
                 STONE, PAPER, SCISSOR, LIZARD AND SPOCK!
             </h1>
             <div className= "buttons">
-                <div className="buttonContainer"><button type= "button" className="btn btn-success" onClick = {() => openOneVsCom()}>Play vs COM</button></div>
+                <div className="buttonContainer"><button type= "button" className="btn btn-success p-3" onClick = {() => openOneVsCom()}>Play vs COM</button></div>
                 <div className= "buttonContainer"><button type= "button" className= "btn btn-primary" onClick = {() => openOneVsOne()} >2 players</button></div>
                 <div className="buttonContainer"><button type= "button" className="btn btn-danger" onClick = {() => openModal()}>More Info...</button></div>
             </div>

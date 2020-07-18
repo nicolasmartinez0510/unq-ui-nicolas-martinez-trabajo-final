@@ -21,12 +21,12 @@ export default function Navigation() {
 
     return (
       <>
-        <nav className="navbar navbar-dark bg-secondary row p-10 justify-content-between rounded">
-            <h1 className = "logo col-1" ></h1>
-            <span className="col-8"/>
-            <button className="btn btn-success mr-3" onClick= {() => refreshPage()}>New Game</button>
-            <button className="btn btn-danger mr-2" type="submit" onClick = {openModal}>More Info</button>
-            <button className="btn btn-outline-light mr-1" type="submit" onClick = {goToHome}>Go to home</button>
+        <nav className="navbar navbar-dark bg-secondary">
+            <h1 className = "logo">Stone,Scissor,Paper,Lizard And Spock</h1>
+            <span className="col-2"/>
+            <button className="btn btn-success" onClick= {() => refreshPage()}>New Game</button>
+            <button className="btn btn-danger" type="submit" onClick = {openModal}>More Info</button>
+            <button className="btn btn-outline-light" type="submit" onClick = {goToHome}>Go to home</button>
         </nav>
         {showModal && <ModalMoreInfo closeModal= {closeModal}/>}
         </>

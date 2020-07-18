@@ -59,3 +59,15 @@
   padding-top: 50px;
   color: #2874A6;
 }
+
+.logo{
+  font-family: fantasy;
+  font-size: xx-large;
+  color: black;
+}
+
+.buttonFight{
+  display: grid;
+    justify-content: right;
+    padding-top: 15px;
+}

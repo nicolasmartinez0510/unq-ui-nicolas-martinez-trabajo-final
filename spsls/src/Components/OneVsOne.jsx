@@ -47,10 +47,6 @@ export default function OneVsOne(){
         
         setShowData(true);
         setShowButton(false);
-        
-
-        // setPlayerTurn(true);
-        // setShowButton(false);
     
     }
 
@@ -59,11 +55,15 @@ export default function OneVsOne(){
         setPlayerTurn(true);
     }
 
+    const resetData = () => {
+        setPointsP1(0);
+        setPointsP2(0);
+        Game.clearResult();
+    }
  
-
     return(
         <div className = "container">
-            <Navigation/>
+            <Navigation property={resetData}/>
             <div className= "points">
                 <h1 className= "pointViewer">PLAYER ONE {pointsP1} | {pointsP2} PLAYER TWO</h1>
            </div>

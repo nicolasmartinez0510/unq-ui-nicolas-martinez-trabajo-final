@@ -4,23 +4,11 @@ import Game from '../Game'
 import ButtonsGroup from './ButtonsGroup';
 import Navigation from './NavBar';
 
-
-// function Puntuacion({pointsP1, pointsP2, text}) {
-//         return(
-//             <>
-//                <div className= "points">
-//                    <h1 className= "pointViewer">PLAYER ONE {pointsP1} | {pointsP2} IA</h1>
-//                </div>
-//                <h3>{text} </h3>
-//            </>)
-// }
-
-
-export default function OneVsPC(){
+export default function OneVsPC({show,}){
 
     const [pointsP1, setPointsP1] = useState(0);
     const [pointsP2, setPointsP2] = useState(0);
-    const [text, setText] = useState('');
+    const [text, setText] = useState("");
     const [playerChoice, setPlayerChoice] = useState("");
     const [iaChoice, setIAChoice] = useState("");
     const [showData, setShowData] = useState(false);
@@ -46,15 +34,17 @@ export default function OneVsPC(){
          }
         
         setShowData(true);
-
-        // setTimeout( () => setShowData(false), 3000);
-
     }
 
+    const resetData = () => {
+        setPointsP1(0);
+        setPointsP2(0);
+        Game.clearResult();
+    }
 
     return(
         <div className = "container"> 
-            <Navigation/>
+            <Navigation property={resetData}/>
            <div className= "points">
                 <h1 className= "pointViewer">PLAYER ONE {pointsP1} | {pointsP2} SHELDON</h1>
            </div>

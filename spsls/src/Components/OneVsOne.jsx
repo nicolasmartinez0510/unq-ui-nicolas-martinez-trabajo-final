@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import Game from '../Game'
 import ButtonsGroup from './ButtonsGroup';
-import Navigation from './NavBar'
+import Navigation from './NavBar';
 
 export default function OneVsOne(){
     const [ playerTurn, setPlayerTurn ] = useState(true);
@@ -71,13 +71,13 @@ export default function OneVsOne(){
                 <>
                     { playerTurn &&
                             <div className= "playerOne">
-                                <h3 className= "text-muted">Player One</h3>
+                                <img className= "logoGame" src= {require('../icons/one.svg')}/>
                                 <ButtonsGroup property= {playerOneChoice}/>
                             </div>
                     }   
                     { !playerTurn &&         
                         <div className = "playerTwo">
-                            <h3 className= "text-muted">Player Two</h3>
+                            <img className= "logoGame" src= {require('../icons/two.svg')}/>
                             <ButtonsGroup property={playerTwoChoice}/>
                         </div>
                     }

@@ -24,13 +24,13 @@ export default function OneVsPC({show,}){
 
         if(playerWinner === 'TIE'){
             setColorResult("warning")
-            setText('TIE, Sheldon CHOICE ' + formP2 + ' SAME')
+            setText('Empate!, Sheldon tambien esocogio ' + formP2)
         } else if(playerWinner === 'P1') {
             setColorResult("success") 
-            setText('Player One WINS with ' + formP1 ) 
+            setText('Ganaste! :)') 
         } else {
             setColorResult("danger") 
-            setText('Sheldon WIN with ' + formP2)
+            setText('Perdiste :c ,Sheldon gana con ' + formP2)
          }
         
         setShowData(true);
@@ -46,12 +46,16 @@ export default function OneVsPC({show,}){
         <div className = "container"> 
             <Navigation property={resetData}/>
            <div className= "points">
-                <h1 className= "pointViewer">PLAYER ONE {pointsP1} | {pointsP2} SHELDON</h1>
+                <h2 className= "pointViewer">
+                    TUS PUNTOS
+                        <h1 className= "pointCounter">{pointsP1}</h1> 
+                    PUNTOS DE SHELDON 
+                        <h1 className= "pointCounter">{pointsP2}</h1> </h2>
            </div>
                 <>
                 {showData && <h2 className= {"alert alert-" + colorResult +" m-2"}>{text}</h2>}
-                {showData && <h5 className="text-muted">You choice {playerChoice} | Sheldon choice {iaChoice}</h5> } 
-                {showData && <button className= "btn btn-warning m-4" onClick = {( () => setShowData(false))}>Next Game</button>}
+                {showData && <h5 className="text-muted">Tu eleccion: {playerChoice} | Eleccion de Sheldon: {iaChoice}</h5> } 
+                {showData && <button className= "btn btn-warning m-4" onClick = {( () => setShowData(false))}>Next Round</button>}
                 </>         
                 {!showData && <ButtonsGroup property= {playerElection}/> }
         </div>

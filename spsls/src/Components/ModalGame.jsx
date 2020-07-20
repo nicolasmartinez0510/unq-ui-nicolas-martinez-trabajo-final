@@ -14,7 +14,7 @@ export default function ModalGame({component, closeModal,show }) {
             centered
         >
             <Modal.Header closeButton onClick = {closeModal}>
-                <Modal.Title>How to play</Modal.Title>
+                <Modal.Title>Play!</Modal.Title>
             </Modal.Header>
             <Modal.Body>
                 <div className="modalContainer">

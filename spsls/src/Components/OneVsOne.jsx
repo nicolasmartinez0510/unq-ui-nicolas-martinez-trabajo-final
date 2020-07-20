@@ -36,13 +36,13 @@ export default function OneVsOne(){
 
         if(playerWinner === 'TIE'){
             setColorResult("warning")
-            setText('TIE, Player Two CHOICE ' + electionP2 + ' SAME')
+            setText('Empate! El jugador dos tambien escogio ' + electionP2 )
         } else if(playerWinner === 'P1') {
             setColorResult("success") 
-            setText('Player One WINS with ' + electionP1 ) 
+            setText('El Jugador Uno Gana!') 
         } else {
             setColorResult("success") 
-            setText('Player Two WIN with ' + electionP2)
+            setText('El Jugador Dos Gana!')
          }
         
         setShowData(true);
@@ -65,31 +65,34 @@ export default function OneVsOne(){
         <div className = "container">
             <Navigation property={resetData}/>
             <div className= "points">
-                <h1 className= "pointViewer">PLAYER ONE {pointsP1} | {pointsP2} PLAYER TWO</h1>
+                <h2 className= "pointViewer">
+                    PUNTOS JUGADOR UNO
+                        <h1 className= "pointCounter">{pointsP1}</h1> 
+                    PUNTOS JUGADOR DOS <h1 className= "pointCounter">{pointsP2}</h1> </h2>
            </div>
             { !showData && 
                 <>
                     { playerTurn &&
                             <div className= "playerOne">
-                                <img className= "logoGame" src= {require('../icons/one.svg')}/>
+                                <img className= "logoGame" src= {require('../icons/one.svg')} alt=""/>
                                 <ButtonsGroup property= {playerOneChoice}/>
                             </div>
                     }   
                     { !playerTurn &&         
                         <div className = "playerTwo">
-                            <img className= "logoGame" src= {require('../icons/two.svg')}/>
+                            <img className= "logoGame" src= {require('../icons/two.svg')} alt=""/>
                             <ButtonsGroup property={playerTwoChoice}/>
                         </div>
                     }
                 </> 
             }
             {showData && <h2 className= {"alert alert-" + colorResult +" m-2"}>{text}</h2>}
-            {showData && <h5 className="text-muted">Player one choice {electionP1} | Player two choice {electionP2}</h5> } 
+            {showData && <h5 className="text-muted">Eleccion Jugador Uno: {electionP1} | Eleccion Jugador Dos: {electionP2}</h5> } 
             {showButton && 
                         <div className= "buttonFight">
-                            <button className="btn btn-warning pl-4 pr-4 pt-2 pb-2" onClick = {() => checkResult() }>FIGHT!</button>
+                            <button className="btn btn-warning pl-4 pr-4 pt-2 pb-2" onClick = {() => checkResult() }>Fight!</button>
                         </div>}
-            {showData && <button className= "btn btn-warning m-4" onClick= {() => nextRound()}>NEXT ROUND</button>}
+            {showData && <button className= "btn btn-warning m-4" onClick= {() => nextRound()}>Next Round</button>}
         </div>   
     )
 }

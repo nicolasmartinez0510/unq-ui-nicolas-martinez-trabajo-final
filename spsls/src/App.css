@@ -36,9 +36,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, 120px);
   justify-content: center;
-  padding-top: 60px;
-  
-  padding-bottom: 80px;
+  padding-top: 15px;
+  padding-bottom: 40px;
 }
 
 .buttonGame{
@@ -57,19 +56,24 @@
 }
 
 .points{
-  display: grid;
-  justify-content: center;
+  text-align: left;
 }
 
 .modal-body{
-  background-image: url('./background.jpg');
+  background-image: url('./background.png');
 }
 
 .pointViewer{
   padding-top: 20px;
   color: #2874A6;
+  font-size: xx-large;
+  padding-bottom: 20px;
+  border-bottom: #2874A6 solid 2px;
 }
 
+.pointCounter{
+  color: black;
+}
 
 .buttonFight{
   display: grid;
@@ -87,5 +91,6 @@
 .logoGame{
   width: 6%;
   height: auto;
+  padding-top: 20px;
 }
 

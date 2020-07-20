@@ -1,4 +1,3 @@
-<br />
 
 ## Bienvenido a "Piedra, Papel, Tijera, Lagarto o Spock", el juego de THE BIG BANG THEORY mas exitoso del mundo!
 

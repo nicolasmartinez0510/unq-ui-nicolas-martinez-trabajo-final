@@ -38,10 +38,10 @@ export default function OneVsOne(){
             setColorResult("warning")
             setText('Empate! El jugador dos tambien escogio ' + electionP2 )
         } else if(playerWinner === 'P1') {
-            setColorResult("success") 
+            setColorResult("primary") 
             setText('El Jugador Uno Gana!') 
         } else {
-            setColorResult("success") 
+            setColorResult("danger") 
             setText('El Jugador Dos Gana!')
          }
         
@@ -56,6 +56,7 @@ export default function OneVsOne(){
     }
 
     const resetData = () => {
+        setShowData(false);
         setPlayerTurn(true);
         setPointsP1(0);
         setPointsP2(0);

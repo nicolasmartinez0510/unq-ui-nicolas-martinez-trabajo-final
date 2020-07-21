@@ -17,6 +17,7 @@ export default function OneVsPC({show,}){
     const playerElection = (election) => {
         const { pointsP1, pointsP2, playerWinner, formP1, formP2 } = Game.playGame(election);
 
+        setTimeout( () => {
         setPlayerChoice(formP1);
         setIAChoice(formP2);
         setPointsP1(pointsP1);
@@ -34,9 +35,11 @@ export default function OneVsPC({show,}){
          }
         
         setShowData(true);
+        }, 1000);
     }
 
     const resetData = () => {
+        setShowData(false);
         setPointsP1(0);
         setPointsP2(0);
         Game.clearResult();

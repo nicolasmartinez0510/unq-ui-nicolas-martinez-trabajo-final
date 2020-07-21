@@ -36,7 +36,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, 120px);
   justify-content: center;
-  padding-top: 15px;
+  padding-top: 25px;
   padding-bottom: 40px;
 }
 
@@ -66,9 +66,8 @@
 .pointViewer{
   padding-top: 20px;
   color: #2874A6;
-  font-size: xx-large;
-  padding-bottom: 20px;
-  border-bottom: #2874A6 solid 2px;
+  padding-top: 10px;
+  border-top: #2874A6 solid 2px;
 }
 
 .pointCounter{

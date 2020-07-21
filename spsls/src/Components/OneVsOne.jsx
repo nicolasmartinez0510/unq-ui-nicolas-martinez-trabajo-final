@@ -56,6 +56,7 @@ export default function OneVsOne(){
     }
 
     const resetData = () => {
+        setPlayerTurn(true);
         setPointsP1(0);
         setPointsP2(0);
         Game.clearResult();
@@ -64,24 +65,18 @@ export default function OneVsOne(){
     return(
         <div className = "container">
             <Navigation property={resetData}/>
-            <div className= "points">
-                <h2 className= "pointViewer">
-                    PUNTOS JUGADOR UNO
-                        <h1 className= "pointCounter">{pointsP1}</h1> 
-                    PUNTOS JUGADOR DOS <h1 className= "pointCounter">{pointsP2}</h1> </h2>
-           </div>
             { !showData && 
                 <>
                     { playerTurn &&
                             <div className= "playerOne">
                                 <img className= "logoGame" src= {require('../icons/one.svg')} alt=""/>
-                                <ButtonsGroup property= {playerOneChoice}/>
+                                <ButtonsGroup property= {playerOneChoice} playerState={playerTurn}/>
                             </div>
                     }   
                     { !playerTurn &&         
                         <div className = "playerTwo">
                             <img className= "logoGame" src= {require('../icons/two.svg')} alt=""/>
-                            <ButtonsGroup property={playerTwoChoice}/>
+                            <ButtonsGroup property={playerTwoChoice} playerState={playerTurn}/>
                         </div>
                     }
                 </> 
@@ -90,9 +85,15 @@ export default function OneVsOne(){
             {showData && <h5 className="text-muted">Eleccion Jugador Uno: {electionP1} | Eleccion Jugador Dos: {electionP2}</h5> } 
             {showButton && 
                         <div className= "buttonFight">
-                            <button className="btn btn-warning pl-4 pr-4 pt-2 pb-2" onClick = {() => checkResult() }>Fight!</button>
+                            <button className="btn btn-warning pl-4 pr-4 pt-2 pb-2 mb-2" onClick = {() => checkResult() }>Fight!</button>
                         </div>}
             {showData && <button className= "btn btn-warning m-4" onClick= {() => nextRound()}>Next Round</button>}
+             <div className= "points">
+                <h4 className= "pointViewer">
+                    PUNTOS JUGADOR UNO
+                        <h3 className= "pointCounter">{pointsP1}</h3> 
+                    PUNTOS JUGADOR DOS <h3 className= "pointCounter">{pointsP2}</h3> </h4>
+           </div>
         </div>   
     )
 }

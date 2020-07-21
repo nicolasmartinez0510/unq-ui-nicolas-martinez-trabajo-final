@@ -45,19 +45,19 @@ export default function OneVsPC({show,}){
     return(
         <div className = "container"> 
             <Navigation property={resetData}/>
-           <div className= "points">
-                <h2 className= "pointViewer">
-                    TUS PUNTOS
-                        <h1 className= "pointCounter">{pointsP1}</h1> 
-                    PUNTOS DE SHELDON 
-                        <h1 className= "pointCounter">{pointsP2}</h1> </h2>
-           </div>
                 <>
                 {showData && <h2 className= {"alert alert-" + colorResult +" m-2"}>{text}</h2>}
                 {showData && <h5 className="text-muted">Tu eleccion: {playerChoice} | Eleccion de Sheldon: {iaChoice}</h5> } 
                 {showData && <button className= "btn btn-warning m-4" onClick = {( () => setShowData(false))}>Next Round</button>}
                 </>         
-                {!showData && <ButtonsGroup property= {playerElection}/> }
+                {!showData && <ButtonsGroup property= {playerElection} playerState={true}/> }
+                <div className= "points">
+                <h4 className= "pointViewer">
+                    MIS PUNTOS
+                        <h3 className= "pointCounter">{pointsP1}</h3> 
+                    PUNTOS DE SHELDON 
+                        <h3 className="pointCounter">{pointsP2}</h3> </h4>
+           </div>
         </div>
     )
 }

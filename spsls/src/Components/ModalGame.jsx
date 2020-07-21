@@ -21,9 +21,6 @@ export default function ModalGame({component, closeModal,show }) {
                     {component}
                 </div>
             </Modal.Body>
-            <Modal.Footer>
-                <Button variant="secondary" onClick= {closeModal}>Close</Button>
-            </Modal.Footer>
         </Modal>
     </div>
     </>

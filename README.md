@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/nicolasmartinez0510/unq-ui-nicolas-martinez-trabajo-final.svg?branch=master)](https://travis-ci.com/nicolasmartinez0510/unq-ui-nicolas-martinez-trabajo-final)
 
 ## Bienvenido a "Piedra, Papel, Tijera, Lagarto o Spock", el juego de THE BIG BANG THEORY mas exitoso del mundo!
 
